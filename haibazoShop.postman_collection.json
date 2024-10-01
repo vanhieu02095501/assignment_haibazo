@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "7cbfeb95-8659-4a2f-a708-16b5ba6e2e2e",
+		"name": "haibazoShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24755144"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "api/v1/categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_prefix2}}categories?page=1&limit=12",
+							"host": [
+								"{{api_prefix2}}categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Home & Decor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_prefix2}}categories",
+							"host": [
+								"{{api_prefix2}}categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/categories",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Đồ điện 2(fixed)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8096/api/v1/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8096",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/categories",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8096/api/v1/categories/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8096",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "api/v1/products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_prefix2}}products?page=1&limit=3&categoryId=1",
+							"host": [
+								"{{api_prefix2}}products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "categoryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/products/imagefile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_prefix2}}products/images/344407c6-5559-49b4-9519-7ae907124ea0_f6f4eba605f0e3264eecf0226ae6eaef.jpg",
+							"host": [
+								"{{api_prefix2}}products"
+							],
+							"path": [
+								"images",
+								"344407c6-5559-49b4-9519-7ae907124ea0_f6f4eba605f0e3264eecf0226ae6eaef.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/products/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_prefix2}}products/4",
+							"host": [
+								"{{api_prefix2}}products"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/products",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Cool T-Shirt\",\r\n  \"price\": 19.99,\r\n  \"categoryId\": 1,\r\n  \"description\": \"A comfortable and stylish t-shirt.\",\r\n  \"quantity\": 100,\r\n  \"thumbnail\": \"\",\r\n  \"variants\": [\r\n    {\r\n      \"styleId\": 1,\r\n      \"colorId\": 1,\r\n      \"sizeId\": 2,\r\n      \"quantity\": 50\r\n    },\r\n    {\r\n      \"styleId\": 2,\r\n      \"colorId\": 2,\r\n      \"sizeId\": 3,\r\n      \"quantity\": 50\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_prefix2}}products",
+							"host": [
+								"{{api_prefix2}}products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/products/uploads/{id}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mac book ari 2019",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "9870",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "this is a test product",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1ef7f6d6-3997-4960-823a-263954fb3668",
+										"postman-cloud:///1ef53115-bd10-4870-9d75-9c1d5abe9683",
+										"postman-cloud:///1ef528d1-e73b-42e0-9bc1-79778a448e26"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_prefix2}}products/uploads/2",
+							"host": [
+								"{{api_prefix2}}products"
+							],
+							"path": [
+								"uploads",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/products",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ipad pro 2023\",\r\n    \"price\":876.23,\r\n    \"description\":\"this is a test product\",\r\n    \"thumbnail\":\"\",\r\n    \"category_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_prefix2}}products/1",
+							"host": [
+								"{{api_prefix2}}products"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/products",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ipad pro 2023\",\r\n    \"price\":876.23,\r\n    \"description\":\"this is a test product\",\r\n    \"thumbnail\":\"\",\r\n    \"category_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_prefix2}}products/1",
+							"host": [
+								"{{api_prefix2}}products"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
